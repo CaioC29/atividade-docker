@@ -1,0 +1,228 @@
+Last login: Thu Oct  8 21:15:58 on ttys000
+caiocarneirogermani@MacBook-Air-de-Caio turma-a % docker compose up -d --build
+[+] Building 15.1s (20/20) FINISHED                                                                                     
+ => [internal] load local bake definitions                                                                         0.0s
+ => => reading from stdin 1.00kB                                                                                   0.0s
+ => [portal internal] load build definition from Dockerfile                                                        0.0s
+ => => transferring dockerfile: 186B                                                                               0.0s
+ => [api internal] load build definition from Dockerfile                                                           0.0s
+ => => transferring dockerfile: 169B                                                                               0.0s
+ => [api internal] load metadata for docker.io/library/node:24-alpine                                              3.0s
+ => [portal internal] load metadata for docker.io/library/nginx:alpine                                             3.0s
+ => [api internal] load .dockerignore                                                                              0.0s
+ => => transferring context: 64B                                                                                   0.0s
+ => [api 1/4] FROM docker.io/library/node:24-alpine@sha256:ebfe2f90462722a7a4de65e91990e97fe0d401c70e0e762c5b533  11.5s
+ => => resolve docker.io/library/node:24-alpine@sha256:ebfe2f90462722a7a4de65e91990e97fe0d401c70e0e762c5b53302f90  0.0s
+ => => sha256:6680b19ad074d7cbe6bf0eb4013d64483980d5cc93bf6774d7effd8bb196df0c 56.60MB / 56.60MB                  10.5s
+ => => sha256:d4a23e25aa718dc5c16fb5935f8683eff024fd67902ef1a4929a42da78d4e9d6 1.26MB / 1.26MB                     1.0s
+ => => sha256:e2f4a003057d235ec28208b606f2f9524400c06882b1ffa1c89ceda8213f5fb4 444B / 444B                         0.3s
+ => => sha256:a9986cd6f37dbddae7862a6d4be71683472e7c2ea708e87db14f8a6393c00f00 4.19MB / 4.19MB                     3.4s
+ => => extracting sha256:a9986cd6f37dbddae7862a6d4be71683472e7c2ea708e87db14f8a6393c00f00                          0.1s
+ => => extracting sha256:6680b19ad074d7cbe6bf0eb4013d64483980d5cc93bf6774d7effd8bb196df0c                          0.9s
+ => => extracting sha256:d4a23e25aa718dc5c16fb5935f8683eff024fd67902ef1a4929a42da78d4e9d6                          0.0s
+ => => extracting sha256:e2f4a003057d235ec28208b606f2f9524400c06882b1ffa1c89ceda8213f5fb4                          0.0s
+ => [api internal] load build context                                                                              0.0s
+ => => transferring context: 4.77kB                                                                                0.0s
+ => [portal internal] load .dockerignore                                                                           0.0s
+ => => transferring context: 2B                                                                                    0.0s
+ => [portal 1/3] FROM docker.io/library/nginx:alpine@sha256:df221db836e1754089190208cee7eeda94f233197056426eda74a  5.3s
+ => => resolve docker.io/library/nginx:alpine@sha256:df221db836e1754089190208cee7eeda94f233197056426eda74a43ab1ab  0.0s
+ => => sha256:1efec2485f4576f8c9fd4f47113769b2de974cece2fec5ecc95e521254da869f 20.09MB / 20.09MB                   3.3s
+ => => sha256:d766d06974faca2e3bc47f067832c4d6469e6db75cbb597baa943ab30b822e60 1.40kB / 1.40kB                     0.9s
+ => => sha256:bc862a9910f586c671851634646f9747fdad971ca2988bf1c36b333a26677daf 1.21kB / 1.21kB                     0.4s
+ => => sha256:943c389642fab1a496f66d9b0ae09288798bb42bd6cd7fb0c06f5e48ad788474 403B / 403B                         0.8s
+ => => sha256:ccea4a153c591cd6756c0a003489efb511a7d9692e5a8463b3152efce5f671e6 964B / 964B                         0.8s
+ => => sha256:766d3311d5dfcea79009b222ef4b3f88dfb0fa79944ccdd730ad164a01598605 628B / 628B                         0.5s
+ => => sha256:858f76146c129bf634d0fef4a2780c3a34b40ba9bf9ef45173e0553414be267f 1.95MB / 1.95MB                     1.2s
+ => => extracting sha256:858f76146c129bf634d0fef4a2780c3a34b40ba9bf9ef45173e0553414be267f                          0.1s
+ => => extracting sha256:766d3311d5dfcea79009b222ef4b3f88dfb0fa79944ccdd730ad164a01598605                          0.0s
+ => => extracting sha256:ccea4a153c591cd6756c0a003489efb511a7d9692e5a8463b3152efce5f671e6                          0.0s
+ => => extracting sha256:943c389642fab1a496f66d9b0ae09288798bb42bd6cd7fb0c06f5e48ad788474                          0.0s
+ => => extracting sha256:bc862a9910f586c671851634646f9747fdad971ca2988bf1c36b333a26677daf                          0.0s
+ => => extracting sha256:d766d06974faca2e3bc47f067832c4d6469e6db75cbb597baa943ab30b822e60                          0.0s
+ => => extracting sha256:1efec2485f4576f8c9fd4f47113769b2de974cece2fec5ecc95e521254da869f                          0.3s
+ => [portal internal] load build context                                                                           0.0s
+ => => transferring context: 3.78kB                                                                                0.0s
+ => [portal 2/3] COPY default.conf.template /etc/nginx/templates/default.conf.template                             0.1s
+ => [portal 3/3] COPY index.html /usr/share/nginx/html/index.html                                                  0.0s
+ => [portal] exporting to image                                                                                    0.1s
+ => => exporting layers                                                                                            0.0s
+ => => exporting manifest sha256:150abcb680a08e117a4b92cf86771697862b94e15ec106922d304e388a624427                  0.0s
+ => => exporting config sha256:a49976d6e298a30e8e3f398033e98e8ed323a7e17a9b6b2c4a7d18a7fb5b9aa6                    0.0s
+ => => exporting attestation manifest sha256:9114be53c97f1b48865cbba760b78d16559a9b03ee84f2bb4080a318bf6d3dbc      0.0s
+ => => exporting manifest list sha256:50590e09ee8c53a1c2782644a50d7049dfcba539235af0ef7b13057fcacf3f1b             0.0s
+ => => naming to docker.io/library/turma-a-portal:latest                                                           0.0s
+ => => unpacking to docker.io/library/turma-a-portal:latest                                                        0.0s
+ => [portal] resolving provenance for metadata file                                                                0.0s
+ => [api 2/4] WORKDIR /app                                                                                         0.1s
+ => [api 3/4] COPY package.json server.ts ./                                                                       0.0s
+ => [api 4/4] RUN mkdir -p /app/registros                                                                          0.1s
+ => [api] exporting to image                                                                                       0.1s
+ => => exporting layers                                                                                            0.0s
+ => => exporting manifest sha256:238a52ea5f23a906861bbe30d66f6fbb84ea7a590b5db2af5131963d8ce5cc76                  0.0s
+ => => exporting config sha256:36f29bd59ef4f911cff941509fe0c615a591389eb039b3c5535df2be35109b5a                    0.0s
+ => => exporting attestation manifest sha256:187d0229c34e27c12594deb3978f57896fe1584af8c13695b7167b15ef4a6549      0.0s
+ => => exporting manifest list sha256:749cc12c1eece7440ef54026d86f64028ff860d10d8d580cdda7dbbf31a973bd             0.0s
+ => => naming to docker.io/library/turma-a-api:latest                                                              0.0s
+ => => unpacking to docker.io/library/turma-a-api:latest                                                           0.0s
+ => [api] resolving provenance for metadata file                                                                   0.0s
+[+] up 5/5
+ ✔ Image turma-a-portal       Built                                                                                15.3s
+ ✔ Image turma-a-api          Built                                                                                15.2s
+ ✔ Network turma-a_default    Created                                                                               0.0s
+ ✔ Container turma-a-api-1    Started                                                                               3.3s
+ ✔ Container turma-a-portal-1 Started                                                                               3.3s
+caiocarneirogermani@MacBook-Air-de-Caio turma-a % docker compose ps
+NAME               IMAGE            COMMAND                  SERVICE   CREATED              STATUS              PORTS
+turma-a-api-1      turma-a-api      "docker-entrypoint.s…"   api       About a minute ago   Up About a minute   4000/tcp
+turma-a-portal-1   turma-a-portal   "/docker-entrypoint.…"   portal    About a minute ago   Up About a minute   127.0.0.1:8082->80/tcp
+caiocarneirogermani@MacBook-Air-de-Caio turma-a % docker compose logs
+api-1  | {"evento":"inicio","porta":5000}
+portal-1  | /docker-entrypoint.sh: /docker-entrypoint.d/ is not empty, will attempt to perform configuration
+portal-1  | /docker-entrypoint.sh: Looking for shell scripts in /docker-entrypoint.d/
+portal-1  | /docker-entrypoint.sh: Launching /docker-entrypoint.d/10-listen-on-ipv6-by-default.sh
+portal-1  | 10-listen-on-ipv6-by-default.sh: info: Getting the checksum of /etc/nginx/conf.d/default.conf
+portal-1  | 10-listen-on-ipv6-by-default.sh: info: Enabled listen on IPv6 in /etc/nginx/conf.d/default.conf
+portal-1  | /docker-entrypoint.sh: Sourcing /docker-entrypoint.d/15-local-resolvers.envsh
+portal-1  | /docker-entrypoint.sh: Launching /docker-entrypoint.d/20-envsubst-on-templates.sh
+portal-1  | 20-envsubst-on-templates.sh: Running envsubst on /etc/nginx/templates/default.conf.template to /etc/nginx/conf.d/default.conf
+portal-1  | /docker-entrypoint.sh: Launching /docker-entrypoint.d/30-tune-worker-processes.sh
+portal-1  | /docker-entrypoint.sh: Configuration complete; ready for start up
+portal-1  | 2026/10/09 00:17:33 [notice] 1#1: using the "epoll" event method
+portal-1  | 2026/10/09 00:17:33 [notice] 1#1: nginx/1.31.6
+portal-1  | 2026/10/09 00:17:33 [notice] 1#1: built by gcc 15.2.0 (Alpine 15.2.0) 
+portal-1  | 2026/10/09 00:17:33 [notice] 1#1: OS: Linux 7.0.14-linuxkit
+portal-1  | 2026/10/09 00:17:33 [notice] 1#1: getrlimit(RLIMIT_NOFILE): 1048576:1048576
+portal-1  | 2026/10/09 00:17:33 [notice] 1#1: start worker processes
+portal-1  | 2026/10/09 00:17:33 [notice] 1#1: start worker process 36
+portal-1  | 2026/10/09 00:17:33 [notice] 1#1: start worker process 37
+portal-1  | 2026/10/09 00:17:33 [notice] 1#1: start worker process 38
+portal-1  | 2026/10/09 00:17:33 [notice] 1#1: start worker process 39
+portal-1  | 2026/10/09 00:17:33 [notice] 1#1: start worker process 40
+portal-1  | 2026/10/09 00:17:33 [notice] 1#1: start worker process 41
+portal-1  | 2026/10/09 00:17:33 [notice] 1#1: start worker process 42
+portal-1  | 2026/10/09 00:17:33 [notice] 1#1: start worker process 43
+portal-1  | 2026/10/09 00:17:33 [notice] 1#1: start worker process 44
+portal-1  | 2026/10/09 00:17:33 [notice] 1#1: start worker process 45
+portal-1  | 172.18.0.1 - - [09/Oct/2026:00:17:45 +0000] "GET / HTTP/1.1" 200 3418 "-" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/154.0.0.0 Safari/537.36" "-"
+portal-1  | 2026/10/09 00:17:45 [error] 36#36: *2 connect() failed (111: Connection refused) while connecting to upstream, client: 172.18.0.1, server: , request: "GET /api/inscricoes HTTP/1.1", upstream: "http://127.0.0.1:4000/inscricoes", host: "localhost:8082", referrer: "http://localhost:8082/"
+portal-1  | 2026/10/09 00:17:45 [error] 37#37: *1 connect() failed (111: Connection refused) while connecting to upstream, client: 172.18.0.1, server: , request: "GET /api/saude HTTP/1.1", upstream: "http://127.0.0.1:4000/saude", host: "localhost:8082", referrer: "http://localhost:8082/"
+portal-1  | 2026/10/09 00:17:45 [warn] 37#37: *1 upstream server temporarily disabled while connecting to upstream, client: 172.18.0.1, server: , request: "GET /api/saude HTTP/1.1", upstream: "http://127.0.0.1:4000/saude", host: "localhost:8082", referrer: "http://localhost:8082/"
+portal-1  | 2026/10/09 00:17:45 [warn] 36#36: *2 upstream server temporarily disabled while connecting to upstream, client: 172.18.0.1, server: , request: "GET /api/inscricoes HTTP/1.1", upstream: "http://127.0.0.1:4000/inscricoes", host: "localhost:8082", referrer: "http://localhost:8082/"
+portal-1  | 2026/10/09 00:17:45 [error] 37#37: *1 connect() failed (111: Connection refused) while connecting to upstream, client: 172.18.0.1, server: , request: "GET /api/saude HTTP/1.1", upstream: "http://[::1]:4000/saude", host: "localhost:8082", referrer: "http://localhost:8082/"
+portal-1  | 2026/10/09 00:17:45 [warn] 37#37: *1 upstream server temporarily disabled while connecting to upstream, client: 172.18.0.1, server: , request: "GET /api/saude HTTP/1.1", upstream: "http://[::1]:4000/saude", host: "localhost:8082", referrer: "http://localhost:8082/"
+portal-1  | 2026/10/09 00:17:45 [error] 36#36: *2 connect() failed (111: Connection refused) while connecting to upstream, client: 172.18.0.1, server: , request: "GET /api/inscricoes HTTP/1.1", upstream: "http://[::1]:4000/inscricoes", host: "localhost:8082", referrer: "http://localhost:8082/"
+portal-1  | 2026/10/09 00:17:45 [warn] 36#36: *2 upstream server temporarily disabled while connecting to upstream, client: 172.18.0.1, server: , request: "GET /api/inscricoes HTTP/1.1", upstream: "http://[::1]:4000/inscricoes", host: "localhost:8082", referrer: "http://localhost:8082/"
+portal-1  | 172.18.0.1 - - [09/Oct/2026:00:17:45 +0000] "GET /api/inscricoes HTTP/1.1" 502 559 "http://localhost:8082/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/154.0.0.0 Safari/537.36" "-"
+portal-1  | 172.18.0.1 - - [09/Oct/2026:00:17:45 +0000] "GET /api/saude HTTP/1.1" 502 559 "http://localhost:8082/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/154.0.0.0 Safari/537.36" "-"
+portal-1  | 2026/10/09 00:17:45 [error] 37#37: *1 connect() failed (111: Connection refused) while connecting to upstream, client: 172.18.0.1, server: , request: "GET /api/eventos HTTP/1.1", upstream: "http://[::1]:4000/eventos", host: "localhost:8082", referrer: "http://localhost:8082/"
+portal-1  | 2026/10/09 00:17:45 [warn] 37#37: *1 upstream server temporarily disabled while connecting to upstream, client: 172.18.0.1, server: , request: "GET /api/eventos HTTP/1.1", upstream: "http://[::1]:4000/eventos", host: "localhost:8082", referrer: "http://localhost:8082/"
+portal-1  | 2026/10/09 00:17:45 [error] 37#37: *1 connect() failed (111: Connection refused) while connecting to upstream, client: 172.18.0.1, server: , request: "GET /api/eventos HTTP/1.1", upstream: "http://127.0.0.1:4000/eventos", host: "localhost:8082", referrer: "http://localhost:8082/"
+portal-1  | 2026/10/09 00:17:45 [warn] 37#37: *1 upstream server temporarily disabled while connecting to upstream, client: 172.18.0.1, server: , request: "GET /api/eventos HTTP/1.1", upstream: "http://127.0.0.1:4000/eventos", host: "localhost:8082", referrer: "http://localhost:8082/"
+portal-1  | 172.18.0.1 - - [09/Oct/2026:00:17:45 +0000] "GET /api/eventos HTTP/1.1" 502 559 "http://localhost:8082/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/154.0.0.0 Safari/537.36" "-"
+portal-1  | 2026/10/09 00:17:45 [error] 37#37: *1 open() "/usr/share/nginx/html/favicon.ico" failed (2: No such file or directory), client: 172.18.0.1, server: , request: "GET /favicon.ico HTTP/1.1", host: "localhost:8082", referrer: "http://localhost:8082/"
+portal-1  | 172.18.0.1 - - [09/Oct/2026:00:17:45 +0000] "GET /favicon.ico HTTP/1.1" 404 555 "http://localhost:8082/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/154.0.0.0 Safari/537.36" "-"
+portal-1  | 172.18.0.1 - - [09/Oct/2026:00:17:47 +0000] "GET / HTTP/1.1" 304 0 "-" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/154.0.0.0 Safari/537.36" "-"
+portal-1  | 2026/10/09 00:17:47 [error] 37#37: *1 connect() failed (111: Connection refused) while connecting to upstream, client: 172.18.0.1, server: , request: "GET /api/inscricoes HTTP/1.1", upstream: "http://127.0.0.1:4000/inscricoes", host: "localhost:8082", referrer: "http://localhost:8082/"
+portal-1  | 2026/10/09 00:17:47 [error] 36#36: *2 connect() failed (111: Connection refused) while connecting to upstream, client: 172.18.0.1, server: , request: "GET /api/saude HTTP/1.1", upstream: "http://127.0.0.1:4000/saude", host: "localhost:8082", referrer: "http://localhost:8082/"
+portal-1  | 2026/10/09 00:17:47 [warn] 36#36: *2 upstream server temporarily disabled while connecting to upstream, client: 172.18.0.1, server: , request: "GET /api/saude HTTP/1.1", upstream: "http://127.0.0.1:4000/saude", host: "localhost:8082", referrer: "http://localhost:8082/"
+portal-1  | 2026/10/09 00:17:47 [warn] 37#37: *1 upstream server temporarily disabled while connecting to upstream, client: 172.18.0.1, server: , request: "GET /api/inscricoes HTTP/1.1", upstream: "http://127.0.0.1:4000/inscricoes", host: "localhost:8082", referrer: "http://localhost:8082/"
+portal-1  | 2026/10/09 00:17:47 [error] 37#37: *1 connect() failed (111: Connection refused) while connecting to upstream, client: 172.18.0.1, server: , request: "GET /api/inscricoes HTTP/1.1", upstream: "http://[::1]:4000/inscricoes", host: "localhost:8082", referrer: "http://localhost:8082/"
+portal-1  | 2026/10/09 00:17:47 [error] 36#36: *2 connect() failed (111: Connection refused) while connecting to upstream, client: 172.18.0.1, server: , request: "GET /api/saude HTTP/1.1", upstream: "http://[::1]:4000/saude", host: "localhost:8082", referrer: "http://localhost:8082/"
+portal-1  | 172.18.0.1 - - [09/Oct/2026:00:17:47 +0000] "GET /api/saude HTTP/1.1" 502 559 "http://localhost:8082/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/154.0.0.0 Safari/537.36" "-"
+portal-1  | 172.18.0.1 - - [09/Oct/2026:00:17:47 +0000] "GET /api/inscricoes HTTP/1.1" 502 559 "http://localhost:8082/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/154.0.0.0 Safari/537.36" "-"
+portal-1  | 2026/10/09 00:17:47 [warn] 36#36: *2 upstream server temporarily disabled while connecting to upstream, client: 172.18.0.1, server: , request: "GET /api/saude HTTP/1.1", upstream: "http://[::1]:4000/saude", host: "localhost:8082", referrer: "http://localhost:8082/"
+portal-1  | 2026/10/09 00:17:47 [warn] 37#37: *1 upstream server temporarily disabled while connecting to upstream, client: 172.18.0.1, server: , request: "GET /api/inscricoes HTTP/1.1", upstream: "http://[::1]:4000/inscricoes", host: "localhost:8082", referrer: "http://localhost:8082/"
+portal-1  | 2026/10/09 00:17:47 [error] 36#36: *2 connect() failed (111: Connection refused) while connecting to upstream, client: 172.18.0.1, server: , request: "GET /api/eventos HTTP/1.1", upstream: "http://[::1]:4000/eventos", host: "localhost:8082", referrer: "http://localhost:8082/"
+portal-1  | 2026/10/09 00:17:47 [warn] 36#36: *2 upstream server temporarily disabled while connecting to upstream, client: 172.18.0.1, server: , request: "GET /api/eventos HTTP/1.1", upstream: "http://[::1]:4000/eventos", host: "localhost:8082", referrer: "http://localhost:8082/"
+portal-1  | 2026/10/09 00:17:47 [error] 36#36: *2 connect() failed (111: Connection refused) while connecting to upstream, client: 172.18.0.1, server: , request: "GET /api/eventos HTTP/1.1", upstream: "http://127.0.0.1:4000/eventos", host: "localhost:8082", referrer: "http://localhost:8082/"
+portal-1  | 2026/10/09 00:17:47 [warn] 36#36: *2 upstream server temporarily disabled while connecting to upstream, client: 172.18.0.1, server: , request: "GET /api/eventos HTTP/1.1", upstream: "http://127.0.0.1:4000/eventos", host: "localhost:8082", referrer: "http://localhost:8082/"
+portal-1  | 172.18.0.1 - - [09/Oct/2026:00:17:47 +0000] "GET /api/eventos HTTP/1.1" 502 559 "http://localhost:8082/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/154.0.0.0 Safari/537.36" "-"
+caiocarneirogermani@MacBook-Air-de-Caio turma-a % curl -i http://localhost:8082/api/saude
+HTTP/1.1 502 Bad Gateway
+Server: nginx/1.31.6
+Date: Fri, 09 Oct 2026 00:20:24 GMT
+Content-Type: text/html
+Content-Length: 157
+Connection: keep-alive
+
+<html>
+<head><title>502 Bad Gateway</title></head>
+<body>
+<center><h1>502 Bad Gateway</h1></center>
+<hr><center>nginx/1.31.6</center>
+</body>
+</html>
+caiocarneirogermani@MacBook-Air-de-Caio turma-a % docker compose down
+[+] down 3/3
+ ✔ Container turma-a-portal-1 Removed                                                                                                                                                                                                        0.2s
+ ✔ Container turma-a-api-1    Removed                                                                                                                                                                                                        3.1s
+ ✔ Network turma-a_default    Removed                                                                                                                                                                                                        0.1s
+caiocarneirogermani@MacBook-Air-de-Caio turma-a % docker compose up -d --build e abra http://localhost:8082
+no such service: e
+
+What's next:
+    Debug this Compose error with Gordon → docker ai "help me fix this compose error"
+caiocarneirogermani@MacBook-Air-de-Caio turma-a % docker compose up -d --build                             
+[+] Building 1.7s (20/20) FINISHED                                                                                                                                                                                                               
+ => [internal] load local bake definitions                                                                                                                                                                                                  0.0s
+ => => reading from stdin 1.00kB                                                                                                                                                                                                            0.0s
+ => [api internal] load build definition from Dockerfile                                                                                                                                                                                    0.0s
+ => => transferring dockerfile: 169B                                                                                                                                                                                                        0.0s
+ => [portal internal] load build definition from Dockerfile                                                                                                                                                                                 0.0s
+ => => transferring dockerfile: 186B                                                                                                                                                                                                        0.0s
+ => [api internal] load metadata for docker.io/library/node:24-alpine                                                                                                                                                                       1.4s
+ => [portal internal] load metadata for docker.io/library/nginx:alpine                                                                                                                                                                      1.4s
+ => [portal internal] load .dockerignore                                                                                                                                                                                                    0.0s
+ => => transferring context: 2B                                                                                                                                                                                                             0.0s
+ => [api internal] load .dockerignore                                                                                                                                                                                                       0.0s
+ => => transferring context: 64B                                                                                                                                                                                                            0.0s
+ => [portal 1/3] FROM docker.io/library/nginx:alpine@sha256:df221db836e1754089190208cee7eeda94f233197056426eda74a43ab1abeac2                                                                                                                0.0s
+ => => resolve docker.io/library/nginx:alpine@sha256:df221db836e1754089190208cee7eeda94f233197056426eda74a43ab1abeac2                                                                                                                       0.0s
+ => [portal internal] load build context                                                                                                                                                                                                    0.0s
+ => => transferring context: 73B                                                                                                                                                                                                            0.0s
+ => [api 1/4] FROM docker.io/library/node:24-alpine@sha256:ebfe2f90462722a7a4de65e91990e97fe0d401c70e0e762c5b53302f905ec1c1                                                                                                                 0.0s
+ => => resolve docker.io/library/node:24-alpine@sha256:ebfe2f90462722a7a4de65e91990e97fe0d401c70e0e762c5b53302f905ec1c1                                                                                                                     0.0s
+ => [api internal] load build context                                                                                                                                                                                                       0.0s
+ => => transferring context: 62B                                                                                                                                                                                                            0.0s
+ => CACHED [portal 2/3] COPY default.conf.template /etc/nginx/templates/default.conf.template                                                                                                                                               0.0s
+ => CACHED [portal 3/3] COPY index.html /usr/share/nginx/html/index.html                                                                                                                                                                    0.0s
+ => [portal] exporting to image                                                                                                                                                                                                             0.0s
+ => => exporting layers                                                                                                                                                                                                                     0.0s
+ => => exporting manifest sha256:150abcb680a08e117a4b92cf86771697862b94e15ec106922d304e388a624427                                                                                                                                           0.0s
+ => => exporting config sha256:a49976d6e298a30e8e3f398033e98e8ed323a7e17a9b6b2c4a7d18a7fb5b9aa6                                                                                                                                             0.0s
+ => => exporting attestation manifest sha256:154b398878f40b552b1c552638a24a7d4440176a90f7e5541f4ee78ee6ff8bef                                                                                                                               0.0s
+ => => exporting manifest list sha256:d12e56214af7abaecf6cd8349176cced4c3fc2bf9e840642500854006e29892f                                                                                                                                      0.0s
+ => => naming to docker.io/library/turma-a-portal:latest                                                                                                                                                                                    0.0s
+ => => unpacking to docker.io/library/turma-a-portal:latest                                                                                                                                                                                 0.0s
+ => CACHED [api 2/4] WORKDIR /app                                                                                                                                                                                                           0.0s
+ => CACHED [api 3/4] COPY package.json server.ts ./                                                                                                                                                                                         0.0s
+ => CACHED [api 4/4] RUN mkdir -p /app/registros                                                                                                                                                                                            0.0s
+ => [api] exporting to image                                                                                                                                                                                                                0.0s
+ => => exporting layers                                                                                                                                                                                                                     0.0s
+ => => exporting manifest sha256:238a52ea5f23a906861bbe30d66f6fbb84ea7a590b5db2af5131963d8ce5cc76                                                                                                                                           0.0s
+ => => exporting config sha256:36f29bd59ef4f911cff941509fe0c615a591389eb039b3c5535df2be35109b5a                                                                                                                                             0.0s
+ => => exporting attestation manifest sha256:8d69f289152207dff823423bb509dda842716b23b6ab96cd2a14bdf90cec54b7                                                                                                                               0.0s
+ => => exporting manifest list sha256:4a2677e4efda2393c33887296e27dc210b9d015ec9db8493ca0ccc15e53d57d0                                                                                                                                      0.0s
+ => => naming to docker.io/library/turma-a-api:latest                                                                                                                                                                                       0.0s
+ => => unpacking to docker.io/library/turma-a-api:latest                                                                                                                                                                                    0.0s
+ => [portal] resolving provenance for metadata file                                                                                                                                                                                         0.0s
+ => [api] resolving provenance for metadata file                                                                                                                                                                                            0.0s
+[+] up 6/6
+ ✔ Image turma-a-portal       Built                                                                                                                                                                                                          1.8s
+ ✔ Image turma-a-api          Built                                                                                                                                                                                                          1.8s
+ ✔ Network turma-a_default    Created                                                                                                                                                                                                        0.0s
+ ✔ Volume turma-a_registros   Created                                                                                                                                                                                                        0.0s
+ ✔ Container turma-a-api-1    Started                                                                                                                                                                                                        0.1s
+ ✔ Container turma-a-portal-1 Started                                                                                                                                                                                                        0.2s
+caiocarneirogermani@MacBook-Air-de-Caio turma-a % docker compose down
+[+] down 3/3
+ ✔ Container turma-a-portal-1 Removed                                                                                                                                                                                                        0.2s
+ ✔ Container turma-a-api-1    Removed                                                                                                                                                                                                        3.1s
+ ✔ Network turma-a_default    Removed                                                                                                                                                                                                        0.1s
+caiocarneirogermani@MacBook-Air-de-Caio turma-a % docker compose up -d 
+[+] up 3/3
+ ✔ Network turma-a_default    Created                                                                                                                                                                                                        0.0s
+ ✔ Container turma-a-api-1    Started                                                                                                                                                                                                        0.2s
+ ✔ Container turma-a-portal-1 Started                                                                                                                                                                                                        0.2s
+caiocarneirogermani@MacBook-Air-de-Caio turma-a % 
